@@ -1,4 +1,10 @@
-# Registrovaní uživatelé
+"""
+ENGETO python 20241117
+Michal Dvorak
+Dvmichal@gmail.com
+"""
+
+# 1 Registrovaní uživatelé
 registered_users = {
     "bob": "123",
     "ann": "pass123",
@@ -6,7 +12,7 @@ registered_users = {
     "liz": "pass123"
 }
 
-# Tři texty pro analýzu
+# 2 Tři texty pro analýzu
 TEXTS = [
 '''Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -35,18 +41,18 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-# 1. Přihlašování uživatele
+# 3 Přihlašování uživatele
 username = input("username: ")
 password = input("password: ")
 
-# 2. Ověření uživatele
+# 4 Ověření uživatele
 if registered_users.get(username) == password:
     print("----------------------------------------")
     print(f"Welcome to the app, {username}")
     print(f"We have {len(TEXTS)} texts to be analyzed.")
     print("----------------------------------------")
 
-    # 3. Výběr textu pro analýzu
+    # 5 Výběr textu pro analýzu
     try:
         text_choice = int(input("Enter a number btw. 1 and 3 to select: ")) - 1
         if text_choice not in range(len(TEXTS)):
@@ -56,23 +62,23 @@ if registered_users.get(username) == password:
         print("Invalid input, terminating the program.")
         exit()
 
-    # 4. Analýza vybraného textu
+    # 6 Analýza vybraného textu
     selected_text = TEXTS[text_choice]
     words = selected_text.split()
 
     # Počet slov
     word_count = len(words)
 
-    # Počet slov začínajících velkým písmenem, velkých slov, malých slov
+    # 7 Počet slov začínajících velkým písmenem, velkých slov, malých slov
     titlecase_count = sum(1 for word in words if word.istitle())
     uppercase_count = sum(1 for word in words if word.isupper() and word.isalpha())
     lowercase_count = sum(1 for word in words if word.islower())
     
-    # Počet čísel (ne cifer) a součet čísel
+    # 8 Počet čísel (ne cifer) a součet čísel
     numeric_count = sum(1 for word in words if word.isdigit())
     numeric_sum = sum(int(word) for word in words if word.isdigit())
 
-    # Výpis výsledků analýzy
+    # 9 Výpis výsledků analýzy
     print("----------------------------------------")
     print(f"There are {word_count} words in the selected text.")
     print(f"There are {titlecase_count} titlecase words.")
@@ -82,13 +88,13 @@ if registered_users.get(username) == password:
     print(f"The sum of all the numbers {numeric_sum}")
     print("----------------------------------------")
 
-    # 5. Sloupcový graf pro četnost délek slov
+    # 10 Sloupcový graf pro četnost délek slov
     word_lengths = {}
     for word in words:
         length = len(word.strip(",.!?"))
         word_lengths[length] = word_lengths.get(length, 0) + 1
 
-    # Výpis grafu
+    # 11 Výpis grafu
     print("LEN|  OCCURRENCES  |NR.")
     print("----------------------------------------")
     for length in sorted(word_lengths):
