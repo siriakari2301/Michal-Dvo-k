@@ -1,20 +1,3 @@
-Konverzace byla otevřena. 1 nepřečtená zpráva.
-
-Přeskočit na obsah
-Jak používat Gmail se čtečkou obrazovky
-3 z 8 304
-projekt fr version
-Doručená pošta
-
-Dvořák Michal Ing. (GFŘ)
-Přílohy
-14:54 (před 1 hodinou)
-komu: mně
-
- 
-
- Jedna příloha
-  •  Zkontrolováno Gmailem
 """
 Projekt 1 - Datový analytik s pythonem - 17/10/2024
 autor: Michal Dvořák
